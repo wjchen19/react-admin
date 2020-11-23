@@ -1,34 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
+// HashRouter,  , BrowserRouter 
+import { HashRouter, Switch, Route } from 'react-router-dom';
+import Home from './views/home';
+import About from './views/about';
 import './App.css';
 // 使用es6的继承属性 来写一个组件 
-class App extends React.component {
-  constructor(props) {
-    super(props)
+class App extends React.Component {
+  constructor() {
+    super()
     this.state = {}
   }
+  //switch  模糊匹配显示第一个匹配到的   exact  精准匹配关键字  
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-        </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-        </a>
-        </header>
-      </div>
+      <HashRouter>
+        <Switch>
+          <Route component={About} path='/about'></Route>
+          <Route component={Home} exact path='/'></Route>
+        </Switch>
+      </HashRouter>
+      // <BrowserRouter>
+      //   <Switch>
+      //     <Route component={About} path='/about'></Route>
+      //     <Route component={Home} exact path='/'></Route>
+      //   </Switch>
+      // </BrowserRouter>
     )
   }
 }
-
 
 
 // function App() {
@@ -51,5 +50,6 @@ class App extends React.component {
 //     </div>
 //   );
 // }
+
 
 export default App;
