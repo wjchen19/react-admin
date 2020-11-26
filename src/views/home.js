@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import '../style/home.scss'
+import { Button } from 'antd'
 class Home extends React.Component {
   constructor(props) {
     super(props)
@@ -6,7 +8,15 @@ class Home extends React.Component {
   }
   render() {
     return (
-      <div>makde </div>
+      <div>makde
+        <ul>
+          <li>222</li>
+          <li>222</li>
+          <li>222</li>
+          <li>222</li>
+        </ul>
+        <Button type="primary">Button</Button>
+      </div>
     )
   }
 }
